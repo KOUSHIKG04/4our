@@ -1,0 +1,77 @@
+.agency-site { --four-header-height: 64px; }
+
+.four-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  user-select: none;
+}
+
+.four-hero-smoke {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: .32;
+  pointer-events: none;
+}
+
+.four-hero-inner {
+  padding-top: calc(var(--four-header-height) + clamp(24px, 4vw, 56px));
+  padding-bottom: clamp(24px, 4vw, 56px);
+}
+
+.four-hero-atom {
+  position: relative;
+  width: 100%;
+  margin-inline: auto;
+  aspect-ratio: 1;
+}
+
+.four-hero-atom-core {
+  position: absolute;
+  inset: 25%;
+  overflow: hidden;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 29%, #ffb076 0%, #ff5c00 35%, #b53b09 66%, #51200d 100%);
+  box-shadow: inset -5px -8px 18px rgb(65 20 4 / 46%);
+}
+
+.four-hero-atom-dither {
+  position: absolute;
+  inset: -30%;
+  opacity: .48;
+}
+
+.four-hero-orbits {
+  position: absolute;
+  overflow: visible;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.four-hero-tap-layer {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.four-hero-tap-ring {
+  position: absolute;
+  border: 1px solid #ff5c00;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: four-hero-tap 1200ms cubic-bezier(.22, .61, .36, 1) both;
+}
+
+@keyframes four-hero-tap {
+  from { width: 7.2px; height: 7.2px; opacity: .95; }
+  to { width: 432px; height: 432px; opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .four-hero-tap-layer { visibility: hidden; }
+}

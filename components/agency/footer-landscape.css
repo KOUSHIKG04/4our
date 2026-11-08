@@ -1,0 +1,123 @@
+.four-footer-landscape {
+  --car-width: clamp(72px, 9.5vw, 144px);
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  aspect-ratio: 16 / 7.124;
+  overflow: hidden;
+  background: #282828;
+}
+
+.four-footer-filters { position: absolute; pointer-events: none; }
+.four-footer-canvas { position: absolute; inset: auto 0 0; width: 100%; aspect-ratio: 16 / 9; transform: translateY(8.4%); }
+.four-footer-ridge { object-fit: fill; pointer-events: none; user-select: none; filter: url(#four-orange-landscape); }
+.four-footer-ridge--back { z-index: 0; }
+.four-footer-left-ridge-shade {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to right, rgb(150 45 0 / 34%) 17%, transparent 29%);
+  clip-path: polygon(
+    0 55.3%, 1% 56%, 3% 56.5%, 5% 56.2%, 6% 56.6%,
+    8% 57.3%, 10% 59.7%, 12% 61.7%, 14% 63.3%, 16% 65.2%,
+    18% 67%, 20% 68.5%, 22% 69.8%, 24% 71.6%, 29% 75%,
+    29% 88%, 0 88%
+  );
+}
+.four-footer-ridge--front { z-index: 3; }
+.four-footer-monument {
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64%;
+  display: flex;
+  gap: 2.5%;
+  align-items: flex-start;
+  padding: 0 2% 7%;
+  overflow: visible;
+  user-select: none;
+  color: #fff;
+}
+.four-footer-glyph {
+  display: block;
+  position: relative;
+  flex: var(--glyph-width) 1 0%;
+  min-width: 0;
+  aspect-ratio: var(--glyph-width) / 421;
+  transform: translate3d(0, var(--letter-drop), 0) rotate(0deg);
+  transform-origin: 50% 80%;
+  transition: transform 850ms cubic-bezier(.4, 0, .2, 1);
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+.four-footer-glyph svg { display: block; width: 100%; height: auto; overflow: visible; pointer-events: none; }
+.four-footer-monument[data-tilting="true"] .four-footer-glyph { transform: translate3d(0, var(--letter-drop), 0) rotate(var(--letter-tilt)); }
+.four-footer-monument:focus-visible { outline: 2px solid #fff; outline-offset: 8px; }
+.four-footer-canvas::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(to bottom, #fff 0% 24%, rgb(255 250 246 / 88%) 36%, rgb(255 229 211 / 60%) 57%);
+  clip-path: polygon(
+    0 0, 100% 0, 100% 32.5%, 95% 36.1%, 90% 37.6%, 85% 40.2%,
+    80% 42.7%, 75% 46.1%, 70% 46.8%, 65% 48.2%, 60% 52.7%, 55% 56%,
+    50% 54.3%, 45% 52.5%, 40% 54.1%, 35% 50.3%, 30% 47.4%, 25% 43.3%,
+    20% 44.5%, 15% 47.8%, 10% 45.2%, 5% 41.4%, 0 41.1%
+  );
+  pointer-events: none;
+}
+.four-footer-car-track { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+.four-footer-car {
+  position: absolute;
+  left: calc(-1 * var(--car-width));
+  bottom: 9%;
+  width: var(--car-width);
+  aspect-ratio: 3.2;
+  overflow: visible;
+  animation: four-footer-drive 25s linear infinite;
+  animation-delay: -8s;
+  animation-play-state: var(--ambient-play-state, paused);
+}
+.four-footer-car-artwork { position: relative; z-index: 2; display: block; width: 100%; height: 100%; object-fit: contain; user-select: none; }
+.four-footer-light-trail {
+  position: absolute;
+  z-index: 1;
+  right: 90%;
+  bottom: 44%;
+  width: clamp(80px, 14vw, 200px);
+  height: 2px;
+  border-radius: 50%;
+  background: linear-gradient(to right, transparent, rgb(255 92 0 / 50%) 40%, #ffad68 82%, #fff2d7);
+  box-shadow: 0 1px 8px rgb(255 120 40 / 70%);
+  pointer-events: none;
+}
+.four-footer-light-trail::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 75%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgb(255 160 95 / 75%));
+}
+@keyframes four-footer-drive {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(100vw + 2 * var(--car-width))); }
+}
+.site-footer .footer-top { padding-bottom: 0; }
+.site-footer .footer-bottom { position: relative; z-index: 6; margin-top: clamp(-40px, -2.5vw, -10px); padding-top: 0; border-top: 0; gap: 12px; }
+@media (max-width: 700px) {
+  .four-footer-landscape { aspect-ratio: 16 / 8.53232; }
+  .four-footer-canvas { width: 128%; left: -14%; aspect-ratio: 16 / 9; }
+  .four-footer-monument { width: 64%; top: 40%; }
+  .four-footer-car { --car-width: 84px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .four-footer-car { animation: none; left: 50%; transform: translateX(-50%); }
+  .four-footer-light-trail { display: none; }
+  .four-footer-monument[data-tilting="true"] .four-footer-glyph { transform: translate3d(0, var(--letter-drop), 0) rotate(0deg); }
+}

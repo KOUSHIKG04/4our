@@ -1,0 +1,33 @@
+.four-contact-note { align-self: center; padding-left: 44px; border-left: 1px solid rgb(40 40 40 / 30%); }
+.four-contact-note h3 { font-size: 24px; font-weight: 500; line-height: 1.3; letter-spacing: -.025em; }
+.four-contact-note > p { max-width: 38ch; font-size: 15px; line-height: 1.8; margin-top: 22px; }
+.four-contact-actions-panel { margin-top: 26px; }
+.four-contact-actions { display: flex; gap: 12px; max-width: 390px; }
+.agency-site .four-contact-action { flex: 1; min-width: 0; height: auto; min-height: 44px; padding: 10px 16px; border-radius: var(--radius-md); font-size: 13px; font-weight: 500; white-space: normal; text-align: center; }
+.agency-site .four-book-call { background: linear-gradient(145deg, #fff, #e6e6e6); color: #282828; border: 1px solid rgb(40 40 40 / 25%); box-shadow: inset 0 1px 1px #fff, 0 3px 6px rgb(40 40 40 / 15%); }
+.four-contact-availability { font-size: 12px; margin-top: 12px !important; }
+.four-enquiry-backdrop { position: fixed; inset: 0; z-index: 80; background: rgb(0 0 0 / 55%); backdrop-filter: blur(4px); pointer-events: auto; }
+[data-radix-popper-content-wrapper]:has(> .four-enquiry-popup) { position: fixed !important; top: clamp(24px, 8vh, 80px) !important; left: 50% !important; width: min(560px, calc(100vw - 32px)) !important; transform: translateX(-50%) !important; z-index: 81 !important; }
+.four-enquiry-popup[data-slot="popover-content"] { display: block; width: 100%; max-height: calc(100dvh - clamp(24px, 8vh, 80px) - 24px); overflow-y: auto; padding: 24px; border: 1px solid #dedede; border-radius: 20px; background: linear-gradient(155deg, #fff, #fafafa 55%, #f2f2f2); color: #282828; box-shadow: inset 0 1px 2px #fff, 0 20px 56px rgb(0 0 0 / 28%); font-family: var(--font-body), sans-serif; font-size: 14px; animation: four-enquiry-enter 180ms ease-out; }
+.four-enquiry-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.four-enquiry-heading h3 { margin: 0; font-family: var(--font-display), sans-serif; font-size: 23px; font-weight: 500; line-height: 1.3; letter-spacing: -.025em; }
+.four-enquiry-close { width: 44px; height: 44px; flex-shrink: 0; border-radius: var(--radius-md); color: #626262; }
+.four-enquiry-description { margin: 8px 0 22px; color: #626262; font-size: 14px; line-height: 1.7; }
+.four-enquiry-form fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.four-enquiry-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.four-enquiry-fields > div { min-width: 0; }
+.four-enquiry-form label { display: block; margin-bottom: 8px; color: #282828; font-size: 14px; line-height: 1.5; }
+.four-enquiry-form fieldset > label { margin-top: 20px; }
+.four-enquiry-form input, .four-enquiry-form textarea { display: block; box-sizing: border-box; width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid #c8c8c8; border-radius: 10px; background: #f2f2f2; box-shadow: inset 0 2px 5px rgb(40 40 40 / 10%), inset 0 -1px 1px #fff; color: #282828; font-family: inherit; font-size: 16px; line-height: 1.5; }
+.four-enquiry-form input::placeholder, .four-enquiry-form textarea::placeholder { color: #626262; opacity: 1; }
+.four-enquiry-form textarea { min-height: 112px; resize: vertical; }
+.four-enquiry-popup :is(input, textarea, button):focus-visible { outline: 2px solid #a83c00; outline-offset: 3px; }
+.four-enquiry-buttons { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.four-enquiry-buttons button { min-height: 44px; height: auto; padding: 10px 20px; border-radius: var(--radius-md); font-size: 14px; font-weight: 500; }
+.four-enquiry-notice, .four-enquiry-feedback { color: #626262; font-size: 13px; line-height: 1.65; margin: 14px 0 0; }
+.four-enquiry-feedback:empty { display: none; }
+.four-enquiry-error { color: #a52020; font-size: 13px; line-height: 1.65; margin-top: 14px; }
+@keyframes four-enquiry-enter { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 900px) { .contact .contact-layout { grid-template-columns: 1fr; } .four-contact-note { padding: 32px 0 0; border-left: 0; border-top: 1px solid rgb(40 40 40 / 30%); } }
+@media (max-width: 540px) { .four-enquiry-popup[data-slot="popover-content"] { padding: 20px; } .four-enquiry-fields { grid-template-columns: 1fr; gap: 16px; } .four-enquiry-buttons > button { flex: 1; } .four-contact-actions { width: 100%; } .four-contact-note h3 { font-size: 22px; } }
+@media (prefers-reduced-motion: reduce) { .four-enquiry-popup[data-slot="popover-content"] { animation: none; } .four-enquiry-backdrop { backdrop-filter: none; } }

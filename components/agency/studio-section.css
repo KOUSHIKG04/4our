@@ -1,0 +1,120 @@
+.studio-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.studio-section {
+  padding-block: 96px;
+  background: var(--surface-section);
+  border-block: 1px solid var(--border);
+}
+.studio-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: stretch;
+}
+.studio-copy {
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center;
+}
+.studio-copy h2 span {
+  color: var(--accent-ink);
+}
+.studio-copy > p {
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+.studio-copy .text-link {
+  margin-top: 24px;
+}
+@media (max-width: 1100px) {
+  .studio-grid {
+    gap: 48px;
+  }
+}
+@media (max-width: 760px) {
+  .studio-note {
+    font-size: 12px;
+    max-width: 32ch;
+    line-height: 1.6;
+  }
+  .studio-section {
+    padding-block: 64px;
+  }
+  .studio-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .studio-copy > p {
+    font-size: 15px;
+  }
+}
+
+.studio-intro {
+  margin-bottom: 0;
+}
+.studio-intro h2 span {
+  color: var(--text-secondary);
+}
+.studio-section {
+  border-block: 0;
+}
+.studio-section {
+  padding-block: 112px;
+}
+@media (max-width: 760px) {
+  .studio-section {
+    padding-block: 64px;
+  }
+}
+
+.studio-intro h2 > span {
+  color: #9b390b;
+}
+.dark .studio-intro h2 > span {
+  color: #ff5c00;
+}
+
+.studio-intro > p {
+  max-width: none;
+}
+@media (min-width: 1000px) {
+  .studio-intro > p {
+    white-space: nowrap;
+    font-size: clamp(14px, 1vw, 16px);
+  }
+}
+@media (max-width: 540px) {
+  .studio-intro-break {
+    display: none;
+  }
+}
+
+.studio-intro h2 > span,
+.dark .studio-intro h2 > span {
+  color: #ff5c00;
+}
+
+.dark .studio-intro h2 > span {
+  color: #ff5c00;
+}
+
+.studio-section {
+  --surface-section: #fff;
+  --accent-ink: #a83c00;
+  --text-secondary: #626262;
+  --text-tertiary: #626262;
+  --border-strong: #e5d3c6;
+  --radius-button: var(--radius-md);
+}
+.agency-site .studio-intro > p { margin-top: 16px; }
+
+.studio-intro {
+  text-align: center;
+}
+
+.agency-site .studio-intro > p { margin-inline: auto; }

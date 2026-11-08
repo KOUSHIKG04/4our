@@ -1,0 +1,5 @@
+{
+  "tool": "built-in image_gen",
+  "reference": "User-supplied codex-clipboard-97d95565-0642-4065-9dca-efeddb6df08c.png",
+  "prompt": "Edit target: the attached side-view red classic coupe illustration. Make a production-ready transparent PNG cutout of ONLY this exact car. Preserve its red paint, illustrated style, side-on profile facing right, body silhouette, dark tires, chrome wheels and bumpers, windows, proportions, and all recognizable details. Remove the entire beige background and ground/shadow line. Keep pale glass in the windows as part of the car. Do not redesign, recolor, add scenery, add text, or change the car model. Tight horizontal canvas with only a small transparent margin around the whole car, both wheels completely visible, no clipping. Asset will be a small moving sprite in a website footer; actual transparent alpha required."
+}

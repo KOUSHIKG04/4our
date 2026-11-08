@@ -1,0 +1,30 @@
+/* The header shares the hero's background at the top of the page. */
+.four-header-shell {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  height: var(--four-header-height);
+  margin-bottom: calc(-1 * var(--four-header-height));
+  pointer-events: none;
+}
+
+.four-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+  min-height: var(--four-header-height);
+  padding-inline: max(var(--page-gutter), calc((100% - var(--page-max)) / 2));
+  background: transparent;
+  color: #282828;
+  pointer-events: auto;
+  transition: background-color 180ms ease-out;
+}
+
+.four-header-shell[data-scrolled="true"] .four-header { background-color: #fff; }
+.agency-site .four-header-contact { min-height: 36px; height: auto; padding: 6px 16px; font-size: 14px; }
+.four-header-shell a:focus-visible { outline: 2px solid #282828; outline-offset: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .four-header { transition: none; }
+}

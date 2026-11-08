@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "design-taste-frontend": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/taste-skill/SKILL.md",
+      "computedHash": "23b3930015c478034b222e1a015da03a962c8ab48aee9fb4f3f69d977034feaa"
+    },
+    "stageshow": {
+      "source": "benjitaylor/skills",
+      "sourceType": "github",
+      "skillPath": "stageshow/SKILL.md",
+      "computedHash": "bf9f07985a62882deae7935b5b1162fb5bf66b248930bb14a75dcaf9d67291b7"
+    },
+    "vaastu": {
+      "source": "KOUSHIKG04/scalable-architecture-skill",
+      "sourceType": "github",
+      "skillPath": "skills/vaastu/SKILL.md",
+      "computedHash": "b4829a62ae84463d5956a6c83ff35767eadcbf40feb5c880d3947b33aa9a6b02"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.service-inline-tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  vertical-align: middle;
+  color: var(--ink);
+  font-weight: 550;
+}
+
+.service-inline-tool img { width: 16px; height: 16px; object-fit: contain; }
